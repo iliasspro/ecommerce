@@ -13,4 +13,13 @@ class UserController extends Controller
     {
         $this->userRepository = $userRepository;
     }
+
+    public function addUser(Request $request){
+        $Action = $this->userRepository->addUser($request);
+
+        if($Action)
+        return redirect("/")->with('status','success');
+        else
+        return redirect("/add")->with('status','Try again');
+    }
 }
