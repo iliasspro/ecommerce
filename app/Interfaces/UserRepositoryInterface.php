@@ -10,7 +10,7 @@ interface UserRepositoryInterface
 
     public function deleteUser($id);
     
-    public function searchUser($keyword);
+    public function searchUser($id);
 
     public function getAllUsers();
 

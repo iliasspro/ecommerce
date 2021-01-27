@@ -15,11 +15,26 @@ class UserController extends Controller
     }
 
     public function addUser(Request $request){
-        $Action = $this->userRepository->addUser($request);
+     return $this->userRepository->addUser($request);
+    }
 
-        if($Action)
-        return redirect("/")->with('status','success');
-        else
-        return redirect("/add")->with('status','Try again');
+    public function getAllUsers(){
+     return $this->userRepository->getAllUsers();
+    }
+
+    public function updateUser(Request $request,$id){
+        return $this->userRepository->updateUser($request,$id);
+    }
+
+    public function deleteUser($id){
+        return $this->userRepository->deleteUser($id);
+    }
+    
+    public function searchUser($id){
+        return $this->userRepository->searchUser($id);
+    }
+
+    public function getUserById($id){
+        return $this->userRepository->getUserById($id);
     }
 }
